@@ -16,3 +16,42 @@ footer.footer{
   bottom : 0px;
   width : 100%;
 }
+
+p{
+  font-family: $font-family-serif;
+  font-size : 18px;
+}
+
+// page Home
+
+.hero-scene{
+  position: relative;
+  &::before{
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background-image: url(../images/charente-maritime.jpg);
+      background-size: cover;
+      filter: brightness(0.8);
+  }
+
+  *{
+      //Positionner les éléments devant le ::before
+      position:relative;
+  }
+
+  .hero-scene-content{
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+}
+
+.text-justify{
+  text-align: justify;
+}
