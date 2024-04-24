@@ -26,6 +26,7 @@ p{
 
 .hero-scene{
   position: relative;
+  margin-bottom: 20px;
   &::before{
       content:"";
       position: absolute;
@@ -44,7 +45,7 @@ p{
   }
 
   .hero-scene-content{
-      height: 400px;
+      height: 350px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,4 +82,11 @@ p{
       opacity: 0;
       transition: all 0.3s;
   }
+}
+
+
+//page signin
+
+.form-label{
+  color : $primary;
 }
