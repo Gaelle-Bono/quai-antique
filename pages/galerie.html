@@ -8,7 +8,7 @@
 
 <div class="container">
   <div class="text-center">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal">Ajouter une photo</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" data-show="admin">Ajouter une photo</button>
   </div>
 
   <div class="row row-cols-2 row-cols-lg-3">
@@ -16,7 +16,7 @@
       <div class="image-card text-white">
           <img src="../images/quartier-chinois.jpg" class="rounded w-100" alt="Quartier chinois"/>
           <p class="titre-image">Quartier chinois</p>
-          <div class="action-image-buttons">
+          <div class="action-image-buttons" data-show="admin">
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
           </div>
@@ -28,7 +28,7 @@
       <div class="image-card text-white">
           <img src="../images/orfeo.jpg" class="rounded w-100" alt="Orféo"/>
           <p class="titre-image">Orféo</p>
-          <div class="action-image-buttons">
+          <div class="action-image-buttons" data-show="admin">
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
           </div>
@@ -39,7 +39,7 @@
       <div class="image-card text-white">
           <img src="../images/charente-maritime.jpg" class="rounded w-100" alt="charente maritime"/>
           <p class="titre-image">Charente maritime</p>
-          <div class="action-image-buttons">
+          <div class="action-image-buttons" data-show="admin">
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
           </div>
@@ -50,7 +50,7 @@
       <div class="image-card text-white">
           <img src="../images/gaelle-jeune.jpg" class="rounded w-100" alt="gaelle jeune"/>
           <p class="titre-image">Gaëlle</p>
-          <div class="action-image-buttons">
+          <div class="action-image-buttons" data-show="admin">
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal"><i class="bi bi-pencil-square"></i></button>
             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal"><i class="bi bi-trash"></i></button>
           </div>
@@ -63,8 +63,6 @@
     <a href="/booking" class="btn btn-primary">Réserver une table</a>
   </div>
 </div>
-
-
 
 
 <!-- Modal edition -->
