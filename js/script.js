@@ -4,6 +4,8 @@ const roleCookieName = "role";
 
 const signoutBtn = document.getElementById("btn-signout");
 
+const apiUrl = "https://127.0.0.1:8000/api/";
+
 
 function setToken(token){
   setCookie(tokenCookieName, token, 7);

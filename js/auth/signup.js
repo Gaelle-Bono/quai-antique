@@ -6,6 +6,7 @@ const inputPassword = document.getElementById("PasswordInput");
 const inputValidationPassword = document.getElementById("ValidatePasswordInput");
 
 const btnInscription = document.getElementById("btn-inscription");
+const registrationForm = document.getElementById("registration-form");
 
 
 inputNom.addEventListener("keyup", validateForm); 
@@ -13,6 +14,8 @@ inputPreNom.addEventListener("keyup", validateForm);
 inputMail.addEventListener("keyup", validateForm);
 inputPassword.addEventListener("keyup", validateForm);
 inputValidationPassword.addEventListener("keyup", validateForm);
+
+btnInscription.addEventListener("click",userRegistration);
 
 
 //Function permettant de valider tout le formulaire
@@ -88,3 +91,53 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd){
       return false;
   }
 }
+
+
+function userRegistration(){
+
+  // Crée un nouvel objet FormData à partir du formulaire contenu dans la variable "formInscription"
+  const dataForm = new FormData(registrationForm);
+
+  // Crée un nouvel objet Headers pour définir les en-têtes de la requête HTTP
+  const myHeaders = new Headers();
+
+  // Ajoute l'en-tête "Content-Type" avec la valeur "application/json"
+  myHeaders.append("Content-Type", "application/json");
+
+  // Convertit les données du formulaire en une chaîne JSON
+  const raw = JSON.stringify({
+      "firstName":  dataForm.get("nom"),
+      "lastName": dataForm.get("prenom"),
+      "email": dataForm.get("email"),
+      "password": dataForm.get("mdp")
+  });
+
+  // Configure les options de la requête HTTP
+  const requestOptions = {
+      // Méthode de la requête : "POST" pour envoyer des données au serveur
+      method: "POST",
+      // Définit les en-têtes de la requête en utilisant l'objet Headers créé précédemment
+      headers: myHeaders,
+      // Corps de la requête : les données JSON converties en chaîne
+      body: raw,
+      // Redirection à suivre en cas de besoin ("follow" suit automatiquement les redirections)
+      redirect: "follow"
+  };
+
+
+  fetch(apiUrl + "registration", requestOptions)
+    .then(response => {
+      if(response.ok){
+        return response.json();
+      }
+      else{
+          alert("Erreur lors de l'inscription");
+      }
+    })
+    .then(result => {
+        alert("Bravo "+ dataForm.get("prenom") + ", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+        document.location.href="/signin";
+    })
+    .catch((error) => console.error(error));
+}
+
