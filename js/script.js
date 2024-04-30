@@ -4,7 +4,7 @@ const roleCookieName = "role";
 
 const signoutBtn = document.getElementById("btn-signout");
 
-const apiUrl = "https://127.0.0.1:8000/api/";
+const apiUrl = "https://github.com/GaetanRole/studi-restaurant-symfony-lts-api/";
 
 
 function setToken(token){
