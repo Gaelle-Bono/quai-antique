@@ -1,10 +1,10 @@
 const galerieImage = document.getElementById("allImages");
 
 
-let titre = 'Orféo'; 
+let titre = 'Repas convivial'; 
 
 //récupérer les informations des images
-let myImage = getImage(titre,"../images/orfeo.jpg");
+let myImage = getImage(titre,"../images/repas.jpg");
 
 galerieImage.innerHTML = myImage;
 
